@@ -38,7 +38,8 @@ body {
   text-align: center;
   margin-top: 20px;
   font-size: 24px;
-  color: green;
+  /* color: green; */
+color: #fff;
 }
 
 button {
