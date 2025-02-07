@@ -19,8 +19,9 @@ function makeMove(cell, index) {
   cell.textContent = currentPlayer;
   cell.classList.add("taken");
 
-  // Dynamic color change
-  cell.style.backgroundColor = generateRandomColor();
+  // Set fixed colors
+  cell.style.backgroundColor =
+    currentPlayer === "X" ? "rgb(255, 100, 100)" : "rgb(100, 255, 100)";
 
   if (checkWinner()) {
     winnerElement.textContent = `${currentPlayer} wins!`;
@@ -47,13 +48,6 @@ function checkWinner() {
     const [a, b, c] = combination;
     return board[a] && board[a] === board[b] && board[a] === board[c];
   });
-}
-
-function generateRandomColor() {
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-  return `rgb(${r}, ${g}, ${b})`;
 }
 
 function initializeBoard() {
